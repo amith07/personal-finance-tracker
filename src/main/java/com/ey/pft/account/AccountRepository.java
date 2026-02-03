@@ -1,5 +1,6 @@
 package com.ey.pft.account;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -11,4 +12,7 @@ public interface AccountRepository extends JpaRepository<Account, UUID> {
 	Page<Account> findByUser_Id(UUID userId, Pageable pageable);
 
 	Optional<Account> findByIdAndUser_Id(UUID id, UUID userId);
+
+	List<Account> findByUser_Id(UUID userId);
+
 }
